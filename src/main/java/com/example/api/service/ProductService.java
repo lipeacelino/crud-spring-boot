@@ -184,7 +184,7 @@ public class ProductService {
     public void deleteProductVariationById(Long productId, Long productVariationId) {
         // Verifica se a variação de produto existe no produto em questão
         ProductVariation productVariation = productVariationRepository
-                .findByProductIdAdProductVariationId(productId, productVariationId)
+                .findByProductIdAndProductVariationId(productId, productVariationId)
                 .orElseThrow(() -> new RuntimeException("Variação de produto não encontrada para o produto em questão."));
 
         // Deleta a variação de produto do banco de dados
